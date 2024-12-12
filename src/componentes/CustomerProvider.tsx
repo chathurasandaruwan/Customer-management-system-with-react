@@ -1,7 +1,7 @@
 import {createContext, useState} from "react";
 import {Customer} from "../models/Customer.ts";
 
-export const CustomerContext  = createContext('');
+export const CustomerContext  = createContext();
 export function CustomerProvider({children}) {
 
     const [customers, setCustomers] = useState<Customer[]>([]);

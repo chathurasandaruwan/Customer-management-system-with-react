@@ -1,9 +1,10 @@
+import {useNavigate} from "react-router";
 import {useContext, useState} from "react";
 import {CustomerContext} from "../componentes/CustomerProvider.tsx";
 import {Customer} from "../models/Customer.ts";
 
 export function AddCustomer (){
-
+    const navigate = useNavigate();
     const [customers, setCustomers] = useContext(CustomerContext);
 
     const [name, setName] = useState("");
@@ -13,7 +14,7 @@ export function AddCustomer (){
     function handleSubmit() {
         const newCustomer = new Customer(name, email, phone);
         setCustomers((customers: Customer[]) => [...customers, newCustomer]);
-
+        navigate('/');
     }
 
     return (
@@ -29,11 +30,6 @@ export function AddCustomer (){
             <br/>
             <br/>
             <button onClick={handleSubmit}>Add Customer</button>
-            <br/>
-            <br/>
-            <br/>
-            {customers.map((customer: Customer) => (<div key={customer.email}>{customer.name + ' '+ customer.email + ' '+ customer.phone }</div>))}
-
         </>
     );
 }
