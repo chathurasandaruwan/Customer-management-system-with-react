@@ -1,5 +1,39 @@
+import {useContext, useState} from "react";
+import {CustomerContext} from "../componentes/CustomerProvider.tsx";
+import {Customer} from "../models/Customer.ts";
+
 export function AddCustomer (){
+
+    const [customers, setCustomers] = useContext(CustomerContext);
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+
+    function handleSubmit() {
+        const newCustomer = new Customer(name, email, phone);
+        setCustomers((customers: Customer[]) => [...customers, newCustomer]);
+
+    }
+
     return (
-        <>Add Customer</>
+        <>
+            <header><h2>Add Customer</h2></header>
+            <br/>
+
+            <input type="text" placeholder='name' onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder='email' onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" placeholder='phone' onChange={(e) => setPhone(e.target.value)} />
+
+            <br/>
+            <br/>
+            <br/>
+            <button onClick={handleSubmit}>Add Customer</button>
+            <br/>
+            <br/>
+            <br/>
+            {customers.map((customer: Customer) => (<div key={customer.email}>{customer.name + ' '+ customer.email + ' '+ customer.phone }</div>))}
+
+        </>
     );
 }
