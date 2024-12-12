@@ -1,5 +1,6 @@
 import {useContext, useState} from "react";
 import {CustomerContext} from "../componentes/CustomerProvider.tsx";
+import {Table} from "../componentes/Table.tsx";
 
 export function UpdateCustomer (){
     const [customers , setCustomer] = useContext(CustomerContext)
@@ -26,9 +27,10 @@ export function UpdateCustomer (){
             <button onClick={updateCustomerByEmail} type="button">Update</button>
             <br/>
             <br/>
-            {customers.map((customer) =>(
+            {/*{customers.map((customer) =>(
                 <div key={customer.email}>{customer.name+'  '+customer.email+'  '+customer.phone}</div>
-            ))}
+            ))}*/}
+            <Table/>
         </>
     )
 }

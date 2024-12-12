@@ -1,5 +1,6 @@
 import {useContext, useState} from "react";
 import {CustomerContext} from "../componentes/CustomerProvider.tsx";
+import {Table} from "../componentes/Table.tsx";
 
 export function DeleteCustomer (){
     const [customers , setCustomer] = useContext(CustomerContext)
@@ -23,9 +24,10 @@ export function DeleteCustomer (){
             <button onClick={deleteCustomerByEmail} type="button">Delete</button>
             <br/>
             <br/>
-            {customers.map((customer) =>(
+            {/*{customers.map((customer) =>(
                 <div key={customer.email}>{customer.name+'  '+customer.email+'  '+customer.phone}</div>
-            ))}
+            ))}*/}
+            <Table/>
         </>
     );
 }
