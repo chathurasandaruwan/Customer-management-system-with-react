@@ -53,6 +53,13 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+ul{
+  width: 100%;
+}
+ul > li{
+  display: inline;
+  margin: 30px;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
