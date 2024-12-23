@@ -15,9 +15,9 @@ export function DeleteCustomer (){
 
     }
     return (
-        <div>
+        <div className="bg-white shadow-md rounded-lg p-6 m-4">
             <header>
-                <h2>Delete Customer</h2>
+                <h2 className="text-2xl font-bold text-gray-700 mb-4">Delete Customer</h2>
             </header>
             <br />
 
@@ -34,21 +34,4 @@ export function DeleteCustomer (){
             <Table/>
         </div>
     );
-    /*return (
-        <>
-            {/!*<input className={"textInput"} name="firstName" type="text" placeholder="Name" onChange={e =>setName(e.target.value)}/>*!/}
-            <input className={"textInput"} name="lastName" type="email" placeholder="Email" onChange={e=>setEmail(e.target.value)}/>
-            {/!*<input className={"textInput"} name="lastName" type="tel" placeholder="Phone" onChange={e=>setPhone(e.target.value)}/>*!/}
-            <br/>
-            <br/>
-            <br/>
-            <button onClick={deleteCustomerByEmail} type="button">Delete</button>
-            <br/>
-            <br/>
-            {/!*{customers.map((customer) =>(
-                <div key={customer.email}>{customer.name+'  '+customer.email+'  '+customer.phone}</div>
-            ))}*!/}
-            <Table/>
-        </>
-    );*/
 }

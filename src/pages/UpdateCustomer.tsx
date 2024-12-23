@@ -18,9 +18,9 @@ export function UpdateCustomer (){
     }
 
     return (
-        <div>
+        <div className="bg-white shadow-md rounded-lg p-6 m-4">
             <header>
-                <h2>Update Customer</h2>
+                <h2 className="text-2xl font-bold text-gray-700 mb-4">Update Customer</h2>
             </header>
             <br />
 
