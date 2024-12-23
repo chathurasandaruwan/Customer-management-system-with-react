@@ -6,6 +6,7 @@ export function Modal(props,children) {
             <input type="text" placeholder='phone' onChange={(e) => props.setPhone(e.target.value)}/>
 
             <br/>
+            <br/>
             <button onClick={props.handleSubmit}>{props.children}</button>
         </>
     );
