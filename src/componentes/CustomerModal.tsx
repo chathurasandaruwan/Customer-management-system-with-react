@@ -1,4 +1,4 @@
-export function Modal(props,children) {
+export function CustomerModal(props, children) {
     return (
         <>
             <input type="text" placeholder='name' onChange={(e) => props.setName(e.target.value)}/>

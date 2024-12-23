@@ -1,7 +1,7 @@
 import {useContext, useState} from "react";
 import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Table} from "../componentes/Table.tsx";
-import {Modal} from "../componentes/Modal.tsx";
+import {CustomerModal} from "../componentes/CustomerModal.tsx";
 
 export function DeleteCustomer (){
     const [customers , setCustomer] = useContext(CustomerContext)
@@ -21,14 +21,14 @@ export function DeleteCustomer (){
             </header>
             <br />
 
-            <Modal
+            <CustomerModal
                 handleSubmit={deleteCustomerByEmail}
                 setName={setName}
                 setEmail={setEmail}
                 setPhone={setPhone}
             >
                 Delete Customer
-            </Modal>
+            </CustomerModal>
             <br/>
             <br/>
             <Table/>

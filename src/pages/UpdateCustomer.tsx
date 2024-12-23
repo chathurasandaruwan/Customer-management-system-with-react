@@ -1,7 +1,7 @@
 import {useContext, useState} from "react";
 import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Table} from "../componentes/Table.tsx";
-import {Modal} from "../componentes/Modal.tsx";
+import {CustomerModal} from "../componentes/CustomerModal.tsx";
 
 export function UpdateCustomer (){
     const [customers , setCustomer] = useContext(CustomerContext)
@@ -24,14 +24,14 @@ export function UpdateCustomer (){
             </header>
             <br />
 
-            <Modal
+            <CustomerModal
                 handleSubmit={updateCustomerByEmail}
                 setName={setName}
                 setEmail={setEmail}
                 setPhone={setPhone}
             >
                 Update Customer
-            </Modal>
+            </CustomerModal>
             <br/>
             <br/>
             <Table/>

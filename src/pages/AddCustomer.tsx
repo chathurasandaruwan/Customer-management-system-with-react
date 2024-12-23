@@ -2,7 +2,7 @@ import {useNavigate} from "react-router";
 import {useContext, useState} from "react";
 import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Customer} from "../models/Customer.ts";
-import {Modal} from "../componentes/Modal.tsx";
+import {CustomerModal} from "../componentes/CustomerModal.tsx";
 import "../index.css"
 
 export function AddCustomer (){
@@ -26,14 +26,14 @@ export function AddCustomer (){
             </header>
             <br />
 
-            <Modal
+            <CustomerModal
                 handleSubmit={handleSubmit}
                 setName={setName}
                 setEmail={setEmail}
                 setPhone={setPhone}
             >
                 Add Customer
-            </Modal>
+            </CustomerModal>
         </div>
     )
 }
