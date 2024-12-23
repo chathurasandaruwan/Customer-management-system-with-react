@@ -4,8 +4,8 @@ import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Customer} from "../models/Customer.ts";
 
 export function Table() {
-    const [customers,setCustomer] =useContext<Customer[]>(CustomerContext)
-    const columns = [
+    const [customers, setCustomers] = useContext(CustomerContext);
+  /*  const columns = [
         {
             name: "Name",
             selector: (row:Customer) => row.name,
@@ -24,6 +24,29 @@ export function Table() {
             <div className="container my-5">
                 <DataTable columns={columns} data={customers} />
             </div>
+        </>
+    );*/
+    return (
+        <>
+            <table>
+                <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>phone</td>
+                </tr>
+                </thead>
+                <tbody>
+                {customers.map((customer: Customer) => (
+                    <tr key={customer.email}>
+                        <td>{customer.name}</td>
+                        <td>{customer.email}</td>
+                        <td>{customer.phone}</td>
+                        {/* {customer.name + " " + customer.email + " " + customer.phone} */}
+                    </tr>
+                ))}
+                </tbody>
+            </table>
         </>
     );
 }
