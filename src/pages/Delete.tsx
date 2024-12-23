@@ -3,7 +3,7 @@ import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Table} from "../componentes/Table.tsx";
 import {CustomerModal} from "../componentes/CustomerModal.tsx";
 
-export function DeleteCustomer (){
+export function Delete (){
     const [customers , setCustomer] = useContext(CustomerContext)
 
     const [name, setName] = useState("")

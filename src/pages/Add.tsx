@@ -5,7 +5,7 @@ import {Customer} from "../models/Customer.ts";
 import {CustomerModal} from "../componentes/CustomerModal.tsx";
 import "../index.css"
 
-export function AddCustomer (){
+export function Add (){
     const navigate = useNavigate();
     const [customers, setCustomers] = useContext(CustomerContext);
 
@@ -18,7 +18,6 @@ export function AddCustomer (){
         setCustomers((customers: Customer[]) => [...customers, newCustomer]);
         navigate('/');
     }
-
     return (
         <div className="bg-white shadow-md rounded-lg p-6 m-4">
             <header>

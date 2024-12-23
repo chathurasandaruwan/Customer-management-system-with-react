@@ -1,10 +1,10 @@
 import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router";
 import {RootLayout} from "./componentes/RootLayout.tsx";
-import {AddCustomer} from "./pages/AddCustomer.tsx";
+import {Add} from "./pages/Add.tsx";
 import {Dashboard} from "./pages/Dashboard.tsx";
-import {DeleteCustomer} from "./pages/DeleteCustomer.tsx";
-import {UpdateCustomer} from "./pages/UpdateCustomer.tsx";
+import {Delete} from "./pages/Delete.tsx";
+import {Update} from "./pages/Update.tsx";
 import {CustomerProvider} from "./store/CustomerProvider.tsx";
 
 function App() {
@@ -14,9 +14,9 @@ function App() {
       element : <RootLayout/>,
       children : [
         { path : '', element : <Dashboard/>},
-        { path : '/add', element : <AddCustomer/>},
-        { path : '/delete', element : <DeleteCustomer/>},
-        { path : '/update', element : <UpdateCustomer/>}
+        { path : '/add', element : <Add/>},
+        { path : '/delete', element : <Delete/>},
+        { path : '/update', element : <Update/>}
       ]
     },
   ])
