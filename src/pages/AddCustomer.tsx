@@ -19,9 +19,9 @@ export function AddCustomer (){
     }
 
     return (
-        <div>
+        <div className="bg-white shadow-md rounded-lg p-6 m-4">
             <header>
-                <h2>Add Customer</h2>
+                <h2 className="text-2xl font-bold text-gray-700 mb-4">Add Customer</h2>
             </header>
             <br />
 
