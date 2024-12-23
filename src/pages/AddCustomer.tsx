@@ -3,6 +3,7 @@ import {useContext, useState} from "react";
 import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Customer} from "../models/Customer.ts";
 import {Modal} from "../componentes/Modal.tsx";
+import "../index.css"
 
 export function AddCustomer (){
     const navigate = useNavigate();
@@ -34,5 +35,5 @@ export function AddCustomer (){
                 Add Customer
             </Modal>
         </div>
-    );
+    )
 }
