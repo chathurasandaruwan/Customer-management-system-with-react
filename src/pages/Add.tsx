@@ -3,10 +3,13 @@ import {useContext, useState} from "react";
 import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Customer} from "../models/Customer.ts";
 import {CustomerModal} from "../componentes/CustomerModal.tsx";
-import "../index.css"
+import {Item} from "../models/Item.ts";
+import {ItemModal} from "../componentes/ItemModal.tsx";
+import {ItemContext} from "../store/ItemProvider.tsx";
 
 export function Add (){
     const navigate = useNavigate();
+    // Add customer
     const [customers, setCustomers] = useContext(CustomerContext);
 
     const [name, setName] = useState("");
@@ -18,6 +21,20 @@ export function Add (){
         setCustomers((customers: Customer[]) => [...customers, newCustomer]);
         navigate('/');
     }
+    // Add items
+    const [items, setItems] = useContext(ItemContext);
+
+    const [itemName, setItemName] = useState("");
+    const [desc, setDesc] = useState("");
+    const [price, setPrice] = useState("");
+    const [qty, setQty] = useState("");
+
+    function AddItem() {
+        const newItem = new Item(itemName,desc,price,qty)
+        setItems((items: Item[]) => [...items, newItem]);
+        navigate('/');
+    }
+
     return (
         <div className="grid grid-cols-2">
             {/*right section*/}
@@ -41,6 +58,17 @@ export function Add (){
                 <header>
                     <h2 className="text-2xl font-bold text-gray-700 mb-4">Add Item</h2>
                 </header>
+                <br/>
+
+                <ItemModal
+                    handleSubmit={AddItem}
+                    setName={setItemName}
+                    setDesc={setDesc}
+                    setPrice={setPrice}
+                    setQty={setQty}
+                >
+                    Add Item
+                </ItemModal>
             </div>
         </div>
     )

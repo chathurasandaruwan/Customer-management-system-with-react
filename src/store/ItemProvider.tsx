@@ -2,7 +2,7 @@ import {createContext, useState} from "react";
 import {Item} from "../models/Item.ts";
 
 export const ItemContext  = createContext();
-export function CustomerProvider({children}) {
+export function ItemProvider({children}) {
 
     const [items, setItems] = useState<Item[]>([]);
 

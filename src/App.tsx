@@ -6,6 +6,7 @@ import {Dashboard} from "./pages/Dashboard.tsx";
 import {Delete} from "./pages/Delete.tsx";
 import {Update} from "./pages/Update.tsx";
 import {CustomerProvider} from "./store/CustomerProvider.tsx";
+import {ItemProvider} from "./store/ItemProvider.tsx";
 
 function App() {
   const routes = createBrowserRouter([
@@ -23,7 +24,9 @@ function App() {
   return (
     <>
       <CustomerProvider>
-        <RouterProvider router={routes}/>
+        <ItemProvider>
+          <RouterProvider router={routes}/>
+        </ItemProvider>
       </CustomerProvider>
     </>
   )
