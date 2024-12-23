@@ -1,23 +1,9 @@
 import {useContext} from "react";
-import {Customer} from "../models/Customer.ts";
 import {Table} from "../componentes/Table.tsx";
-import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {ItemContext} from "../store/ItemProvider.tsx";
 import {Item} from "../models/Item.ts";
 
-
-/*
-export function Dashboard (){
-    // const [customers,setCustomer] =useContext(CustomerContext)
-    return (
-        <>Dashboard
-            <Table/>
-        </>
-
-    );
-}*/
 export function Dashboard() {
-    // const [customers,setCustomer] =useContext(CustomerContext)
     const [items, setItems] = useContext(ItemContext);
     return (
         <div className="p-6 h-lvh bg-amber-100">
