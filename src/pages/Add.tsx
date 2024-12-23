@@ -20,7 +20,7 @@ export function Add (){
     }
     return (
         <div className="grid grid-cols-2">
-            {/*write section*/}
+            {/*right section*/}
             <div className="bg-white shadow-md rounded-lg p-6 m-4 ">
                 <header>
                     <h2 className="text-2xl font-bold text-gray-700 mb-4">Add Customer</h2>
@@ -38,7 +38,9 @@ export function Add (){
             </div>
             {/*left section*/}
             <div className="bg-white shadow-md rounded-lg p-6 m-4">
-                <h1 className="text-2xl font-bold text-gray-500 mb-6">Add Item</h1>
+                <header>
+                    <h2 className="text-2xl font-bold text-gray-700 mb-4">Add Item</h2>
+                </header>
             </div>
         </div>
     )
