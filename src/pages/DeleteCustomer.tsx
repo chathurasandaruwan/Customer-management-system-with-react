@@ -1,5 +1,5 @@
 import {useContext, useState} from "react";
-import {CustomerContext} from "../componentes/CustomerProvider.tsx";
+import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Table} from "../componentes/Table.tsx";
 
 export function DeleteCustomer (){

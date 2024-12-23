@@ -1,6 +1,6 @@
 import DataTable from 'react-data-table-component';
 import {useContext} from "react";
-import {CustomerContext} from "./CustomerProvider.tsx";
+import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Customer} from "../models/Customer.ts";
 
 export function Table() {
