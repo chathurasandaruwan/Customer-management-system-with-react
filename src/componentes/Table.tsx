@@ -28,8 +28,8 @@ export function Table() {
     );*/
     return (
         <>
-            <table>
-                <thead>
+            <table className="table-auto border border-gray-200 w-full text-center bg-white">
+                <thead className="bg-blue-500">
                 <tr>
                     <td>Name</td>
                     <td>Email</td>
