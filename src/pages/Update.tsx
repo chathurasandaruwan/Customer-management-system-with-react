@@ -19,6 +19,7 @@ export function Update (){
             customer.email==email ? {...customer,name : name, phone : phone} : customer
         ))
         setCustomer(updateCustomer);
+        navigate('/');
     }
     // Add items
     const [items, setItems] = useContext(ItemContext);

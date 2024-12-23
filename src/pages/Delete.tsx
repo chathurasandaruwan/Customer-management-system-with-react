@@ -16,7 +16,7 @@ export function Delete (){
 
     function deleteCustomerByEmail() {
         setCustomer((customers) =>customers.filter((customers) =>customers.email != email));
-
+        navigate('/');
     }
     // Add items
     const [items, setItems] = useContext(ItemContext);
