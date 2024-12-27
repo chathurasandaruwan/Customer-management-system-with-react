@@ -6,6 +6,7 @@ import {useNavigate} from "react-router";
 import {ItemContext} from "../store/ItemProvider.tsx";
 import {ItemModal} from "../componentes/ItemModal.tsx";
 import {Customer} from "../models/Customer.ts";
+import {Item} from "../models/Item.ts";
 
 export function Update (){
     const navigate = useNavigate();
@@ -23,8 +24,8 @@ export function Update (){
         dispatch({type:'UPDATE_CUSTOMER', payload:new Customer(name,email,phone)});
         navigate('/');
     }
-    // Add items
-    const [items, setItems] = useContext(ItemContext);
+    // update items
+    const [items, dispatche] = useContext(ItemContext);
 
     const [itemName, setItemName] = useState("");
     const [desc, setDesc] = useState("");
@@ -32,10 +33,7 @@ export function Update (){
     const [qty, setQty] = useState("");
 
     function updateItem() {
-        const updateItem = items.map((item)=>(
-            item.name==itemName ? {...item,desc : desc, price : price, qty : qty} : item
-        ))
-        setItems(updateItem);
+        dispatche({type:'UPDATE_ITEM', payload:new Item(itemName,desc,price,qty)});
         navigate('/');
     }
 

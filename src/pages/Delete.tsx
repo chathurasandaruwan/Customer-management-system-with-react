@@ -1,11 +1,11 @@
 import {useContext, useState} from "react";
 import {CustomerContext} from "../store/CustomerProvider.tsx";
-import {Table} from "../componentes/Table.tsx";
 import {CustomerModal} from "../componentes/CustomerModal.tsx";
 import {ItemModal} from "../componentes/ItemModal.tsx";
 import {ItemContext} from "../store/ItemProvider.tsx";
 import {useNavigate} from "react-router";
 import {Customer} from "../models/Customer.ts";
+import {Item} from "../models/Item.ts";
 
 export function Delete (){
     const navigate = useNavigate();
@@ -20,8 +20,8 @@ export function Delete (){
         dispatch({type:'DELETE_CUSTOMER', payload:new Customer(name,email,phone)});
         navigate('/');
     }
-    // Add items
-    const [items, setItems] = useContext(ItemContext);
+    // delete items
+    const [items, dispatche] = useContext(ItemContext);
 
     const [itemName, setItemName] = useState("");
     const [desc, setDesc] = useState("");
@@ -29,7 +29,7 @@ export function Delete (){
     const [qty, setQty] = useState("");
 
     function deleteItem() {
-        setItems((items)=> items.filter((items)=> items.name != itemName))
+        dispatche({type:'DELETE_ITEM', payload:new Item(itemName,desc,price,qty)});
         navigate('/');
     }
     return (

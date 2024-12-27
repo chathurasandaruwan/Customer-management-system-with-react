@@ -22,7 +22,7 @@ export function Add (){
         navigate('/');
     }
     // Add items
-    const [items, setItems] = useContext(ItemContext);
+    const [items, dispatche] = useContext(ItemContext);
 
     const [itemName, setItemName] = useState("");
     const [desc, setDesc] = useState("");
@@ -31,7 +31,7 @@ export function Add (){
 
     function AddItem() {
         const newItem = new Item(itemName,desc,price,qty)
-        setItems((items: Item[]) => [...items, newItem]);
+        dispatche({type:'ADD_ITEM', payload:newItem});
         navigate('/');
     }
 
