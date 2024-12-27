@@ -5,17 +5,19 @@ import {CustomerModal} from "../componentes/CustomerModal.tsx";
 import {ItemModal} from "../componentes/ItemModal.tsx";
 import {ItemContext} from "../store/ItemProvider.tsx";
 import {useNavigate} from "react-router";
+import {Customer} from "../models/Customer.ts";
 
 export function Delete (){
     const navigate = useNavigate();
-    const [customers , setCustomer] = useContext(CustomerContext)
+    const [customers , dispatch] = useContext(CustomerContext)
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
 
     function deleteCustomerByEmail() {
-        setCustomer((customers) =>customers.filter((customers) =>customers.email != email));
+        /*setCustomer((customers) =>customers.filter((customers) =>customers.email != email));*/
+        dispatch({type:'DELETE_CUSTOMER', payload:new Customer(name,email,phone)});
         navigate('/');
     }
     // Add items
