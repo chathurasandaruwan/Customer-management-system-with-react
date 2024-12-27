@@ -10,7 +10,7 @@ import {ItemContext} from "../store/ItemProvider.tsx";
 export function Add (){
     const navigate = useNavigate();
     // Add customer
-    const [customers, setCustomers] = useContext(CustomerContext);
+    const [customers, dispatch] = useContext(CustomerContext);
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ export function Add (){
 
     function AddCustomer() {
         const newCustomer = new Customer(name, email, phone);
-        setCustomers((customers: Customer[]) => [...customers, newCustomer]);
+        dispatch({type:'ADD_CUSTOMER', payload:newCustomer});
         navigate('/');
     }
     // Add items
