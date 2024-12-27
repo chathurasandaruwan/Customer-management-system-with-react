@@ -5,20 +5,22 @@ import {CustomerModal} from "../componentes/CustomerModal.tsx";
 import {useNavigate} from "react-router";
 import {ItemContext} from "../store/ItemProvider.tsx";
 import {ItemModal} from "../componentes/ItemModal.tsx";
+import {Customer} from "../models/Customer.ts";
 
 export function Update (){
     const navigate = useNavigate();
-    const [customers , setCustomer] = useContext(CustomerContext)
+    const [customers, dispatch] = useContext(CustomerContext);
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
 
     function updateCustomerByEmail() {
-        const updateCustomer = customers.map((customer)=>(
+/*        const updateCustomer = customers.map((customer)=>(
             customer.email==email ? {...customer,name : name, phone : phone} : customer
         ))
-        setCustomer(updateCustomer);
+        setCustomer(updateCustomer);*/
+        dispatch({type:'UPDATE_CUSTOMER', payload:new Customer(name,email,phone)});
         navigate('/');
     }
     // Add items
