@@ -4,8 +4,7 @@ export const initialState :  Customer[] = [];
 export function CustomerReducer(state:Customer [], action:{type:string, payload:Customer}) {
     switch (action.type) {
         case 'ADD_CUSTOMER':
-            console.log('Add customer');
-            return
+            return [...state,action.payload];
         case 'UPDATE_CUSTOMER':
             console.log('UPDATE CUSTOMER');
             return;
