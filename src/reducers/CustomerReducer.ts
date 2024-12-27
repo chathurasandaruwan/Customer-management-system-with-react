@@ -6,11 +6,11 @@ export function CustomerReducer(state:Customer [], action:{type:string, payload:
         case 'ADD_CUSTOMER':
             return [...state,action.payload];
         case 'UPDATE_CUSTOMER':
-            console.log('UPDATE CUSTOMER');
-            return;
+            return state.map((customer)=>(
+                customer.email==action.payload.email ? {...customer,name : action.payload.name, phone : action.payload.phone} : customer
+            ))
         case 'DELETE_CUSTOMER':
-            console.log('DELETE CUSTOMER');
-            return;
+            return state.filter((items)=> items.name != action.payload.name)
         default:
             console.log('something wrong please try again!!')
             return;
