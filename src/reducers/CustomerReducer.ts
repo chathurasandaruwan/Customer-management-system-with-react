@@ -10,7 +10,7 @@ export function CustomerReducer(state:Customer [], action:{type:string, payload:
                 customer.email==action.payload.email ? {...customer,name : action.payload.name, phone : action.payload.phone} : customer
             ))
         case 'DELETE_CUSTOMER':
-            return state.filter((items)=> items.name != action.payload.name)
+            return state.filter((customer)=> customer.email != action.payload.email)
         default:
             console.log('something wrong please try again!!')
             return;

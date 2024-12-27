@@ -1,10 +1,10 @@
-import DataTable from 'react-data-table-component';
+// import DataTable from 'react-data-table-component';
 import {useContext} from "react";
 import {CustomerContext} from "../store/CustomerProvider.tsx";
 import {Customer} from "../models/Customer.ts";
 
 export function Table() {
-    const [customers, setCustomers] = useContext(CustomerContext);
+    const [customers] = useContext(CustomerContext);
   /*  const columns = [
         {
             name: "Name",
